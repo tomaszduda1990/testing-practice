@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [isRed, toggleIsRed] = useState(true);
+	const theme = {
+		styles: {
+			backgroundColor: isRed ? 'red' : 'blue',
+			color: '#fff',
+		},
+		text: isRed ? 'blue' : 'red',
+	};
+	const onClick = () => {
+		toggleIsRed(!isRed);
+	};
+	return (
+		<div className='App' style={{ textAlign: 'center' }}>
+			<button onClick={onClick} style={theme.styles}>
+				Change color to {theme.text}
+			</button>
+		</div>
+	);
 }
 
 export default App;
