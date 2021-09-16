@@ -6,6 +6,7 @@
       "plugin:jest/recommended",
       "plugin:prettier/recommended"
    ],
+   "exclude": ["node_modules", "public"],
    "plugins":[
       "react",
       "@typescript-eslint",
@@ -13,12 +14,7 @@
 	  "testing-library",
 	  "import"
    ],
-//    "overrides": [
-//     {
-//       "files": ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
-//       "extends": ["plugin:testing-library/react", "plugin:testing-library/recommended", "plugin:jest-dom/recommended"]
-//     }
-//   ],
+   "ignorePatterns": ["public/*"],
    "env":{
       "browser":true,
       "es6":true,
